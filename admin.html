@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>NexoStore Admin</title>
+
+  <!-- =========================================================
+       FUENTES
+       ========================================================= -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- =========================================================
+       CSS
+       ========================================================= -->
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body class="admin-body">
+
+  <!-- =========================================================
+       LOGIN
+       ========================================================= -->
+  <section id="loginView" class="admin-login">
+
+    <div class="login-card">
+
+      <div class="admin-logo">
+        N
+      </div>
+
+      <p class="eyebrow">
+        NEXOSTORE
+      </p>
+
+      <h1>
+        Panel administrativo
+      </h1>
+
+      <p>
+        Gestiona productos y pedidos de tu tienda.
+      </p>
+
+
+      <form id="loginForm">
+
+        <label>
+          Correo electrónico
+
+          <input
+            type="email"
+            id="loginEmail"
+            placeholder="admin@email.com"
+            required
+          >
+
+        </label>
+
+
+        <label>
+          Contraseña
+
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="••••••••"
+            required
+          >
+
+        </label>
+
+
+        <button
+          type="submit"
+          class="admin-btn primary"
+          id="loginButton"
+        >
+          Iniciar sesión
+        </button>
+
+      </form>
+
+      <div id="loginError" class="admin-error"></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       APLICACIÓN ADMINISTRATIVA
+       ========================================================= -->
+  <section
+    id="appView"
+    class="admin-app"
+    style="display:none"
+  >
+
+    <!-- =======================================================
+         SIDEBAR
+         ======================================================= -->
+    <aside class="admin-sidebar">
+
+      <div class="admin-brand">
+
+        <div class="admin-logo">
+          N
+        </div>
+
+        <div>
+
+          <strong>
+            NEXOSTORE
+          </strong>
+
+          <small>
+            ADMIN
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <nav class="admin-nav">
+
+        <button
+          class="admin-nav-btn active"
+          data-admin-section="inventory"
+        >
+          <span>▦</span>
+          Inventario
+        </button>
+
+
+        <button
+          class="admin-nav-btn"
+          data-admin-section="orders"
+        >
+          <span>◈</span>
+          Pedidos
+        </button>
+
+      </nav>
+
+
+      <div class="admin-sidebar-bottom">
+
+        <a
+          href="index.html"
+          target="_blank"
+          class="admin-store-link"
+        >
+          ↗ Ver tienda
+        </a>
+
+        <button
+          id="logoutButton"
+          class="logout-btn"
+        >
+          Cerrar sesión
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <!-- =======================================================
+         CONTENIDO
+         ======================================================= -->
+    <main class="admin-main">
+
+      <!-- HEADER -->
+      <header class="admin-header">
+
+        <div>
+
+          <p class="eyebrow">
+            PANEL DE CONTROL
+          </p>
+
+          <h1 id="adminSectionTitle">
+            Inventario
+          </h1>
+
+        </div>
+
+
+        <div class="admin-user">
+
+          <span id="connectionStatus">
+            ● Conectando...
+          </span>
+
+        </div>
+
+      </header>
+
+
+      <!-- =====================================================
+           INVENTARIO
+           ===================================================== -->
+      <section id="inventorySection">
+
+        <!-- ESTADÍSTICAS -->
+        <div class="stats-grid">
+
+          <div class="stat-card">
+
+            <span>
+              Productos
+            </span>
+
+            <strong id="statProducts">
+              0
+            </strong>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <span>
+              Unidades
+            </span>
+
+            <strong id="statUnits">
+              0
+            </strong>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <span>
+              Valor inventario
+            </span>
+
+            <strong id="statValue">
+              $0
+            </strong>
+
+          </div>
+
+
+          <div class="stat-card warning">
+
+            <span>
+              Stock bajo
+            </span>
+
+            <strong id="statLow">
+              0
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- FORMULARIO -->
+        <div class="admin-card">
+
+          <div class="admin-card-header">
+
+            <div>
+
+              <p class="eyebrow">
+                PRODUCTO
+              </p>
+
+              <h2 id="formTitle">
+                Nuevo producto
+              </h2>
+
+            </div>
+
+          </div>
+
+
+          <form id="productForm" class="product-form">
+
+            <input
+              type="hidden"
+              id="productId"
+            >
+
+
+            <div class="form-field">
+
+              <label>
+                Nombre
+              </label>
+
+              <input
+                type="text"
+                id="productName"
+                placeholder="Ej. Anillo Aura"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label>
+                Categoría
+              </label>
+
+              <select id="productCategory" required>
+
+                <option value="">
+                  Seleccionar
+                </option>
+
+                <option value="Anillos">
+                  Anillos
+                </option>
+
+                <option value="Collares">
+                  Collares
+                </option>
+
+                <option value="Aretes">
+                  Aretes
+                </option>
+
+                <option value="Pulseras">
+                  Pulseras
+                </option>
+
+                <option value="Otros">
+                  Otros
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label>
+                Precio COP
+              </label>
+
+              <input
+                type="number"
+                id="productPrice"
+                min="0"
+                step="1"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label>
+                Stock
+              </label>
+
+              <input
+                type="number"
+                id="productStock"
+                min="0"
+                step="1"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label>
+                Stock mínimo
+              </label>
+
+              <input
+                type="number"
+                id="productMinStock"
+                min="0"
+                value="3"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label>
+                Etiqueta
+              </label>
+
+              <input
+                type="text"
+                id="productTag"
+                placeholder="Nuevo / Bestseller"
+              >
+
+            </div>
+
+
+            <div class="form-field full">
+
+              <label>
+                URL de imagen
+              </label>
+
+              <input
+                type="url"
+                id="productImage"
+                placeholder="https://..."
+              >
+
+            </div>
+
+
+            <div class="form-field full">
+
+              <label>
+                Descripción
+              </label>
+
+              <textarea
+                id="productDescription"
+                rows="4"
+                placeholder="Descripción del producto..."
+              ></textarea>
+
+            </div>
+
+
+            <div class="form-field checkbox-field">
+
+              <label>
+
+                <input
+                  type="checkbox"
+                  id="productFeatured"
+                >
+
+                Mostrar como producto destacado
+
+              </label>
+
+            </div>
+
+
+            <div class="form-actions">
+
+              <button
+                type="submit"
+                class="admin-btn primary"
+                id="saveProductButton"
+              >
+                Guardar producto
+              </button>
+
+              <button
+                type="button"
+                class="admin-btn secondary"
+                id="cancelEdit"
+                style="display:none"
+              >
+                Cancelar
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+
+        <!-- =====================================================
+             CONTROLES INVENTARIO
+             ===================================================== -->
+        <div class="admin-toolbar">
+
+          <input
+            type="search"
+            id="adminSearch"
+            placeholder="Buscar producto..."
+          >
+
+
+          <select id="categoryFilter">
+
+            <option value="all">
+              Todas las categorías
+            </option>
+
+          </select>
+
+
+          <select id="stockFilter">
+
+            <option value="all">
+              Todo el stock
+            </option>
+
+            <option value="low">
+              Stock bajo
+            </option>
+
+            <option value="out">
+              Agotados
+            </option>
+
+          </select>
+
+
+          <button
+            class="admin-btn secondary"
+            id="exportCsv"
+          >
+            Exportar CSV
+          </button>
+
+        </div>
+
+
+        <!-- PRODUCTOS -->
+        <div
+          class="admin-product-grid"
+          id="adminProductGrid"
+        >
+          <!-- JS -->
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           PEDIDOS
+           ===================================================== -->
+      <section
+        id="ordersSection"
+        style="display:none"
+      >
+
+        <div class="admin-card">
+
+          <div class="admin-card-header">
+
+            <div>
+
+              <p class="eyebrow">
+                VENTAS
+              </p>
+
+              <h2>
+                Pedidos recibidos
+              </h2>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="orders-list"
+            id="ordersList"
+          >
+            <!-- JS -->
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </section>
+
+
+  <!-- =========================================================
+       TOAST ADMIN
+       ========================================================= -->
+  <div
+    class="toast"
+    id="adminToast"
+  ></div>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+  <script type="module" src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- =========================================================
+       CONFIGURACIÓN GENERAL
+       ========================================================= -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NexoStore - Joyería contemporánea">
+
+  <title>NexoStore — Joyería</title>
+
+  <!-- =========================================================
+       GOOGLE FONTS
+       ========================================================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- =========================================================
+       CSS PRINCIPAL
+       ========================================================= -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =========================================================
+       BARRA SUPERIOR
+       ========================================================= -->
+  <div class="announcement">
+    Envíos a todo Colombia · Joyería seleccionada para ti
+  </div>
+
+
+  <!-- =========================================================
+       HEADER / NAVEGACIÓN
+       ========================================================= -->
+  <header class="site-header">
+
+    <div class="container navbar">
+
+      <!-- LOGO -->
+      <a href="#" class="brand">
+
+        <span class="brand-mark">N</span>
+
+        <span>
+          <strong>NEXO</strong>
+          <small>JOYERÍA CONTEMPORÁNEA</small>
+        </span>
+
+      </a>
+
+
+      <!-- MENÚ DESKTOP / MOBILE -->
+      <nav class="nav-links" id="navLinks">
+
+        <a href="#inicio">Inicio</a>
+        <a href="#destacados">Destacados</a>
+        <a href="#coleccion">Colección</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+
+      </nav>
+
+
+      <!-- ACCIONES -->
+      <div class="nav-actions">
+
+        <!-- BUSCAR -->
+        <button
+          class="icon-btn"
+          id="searchBtn"
+          aria-label="Buscar"
+          title="Buscar"
+        >
+          ⌕
+        </button>
+
+
+        <!-- CARRITO -->
+        <button
+          class="icon-btn cart-button"
+          id="cartBtn"
+          aria-label="Abrir carrito"
+          title="Carrito"
+        >
+          ♡
+          <span id="cartCount">0</span>
+        </button>
+
+
+        <!-- MENÚ MOBILE -->
+        <button
+          class="icon-btn mobile-menu"
+          id="menuToggle"
+          aria-label="Abrir menú"
+        >
+          ☰
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- =======================================================
+         BUSCADOR
+         ======================================================= -->
+    <div class="search-bar" id="searchBar">
+
+      <div class="container search-inner">
+
+        <span>⌕</span>
+
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Buscar joyas..."
+          autocomplete="off"
+        >
+
+        <button
+          class="close-btn"
+          id="closeSearch"
+          aria-label="Cerrar búsqueda"
+        >
+          ×
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================================
+       HERO
+       ========================================================= -->
+  <main>
+
+    <section class="hero" id="inicio">
+
+      <div class="hero-glow glow-a"></div>
+      <div class="hero-glow glow-b"></div>
+
+      <div class="container hero-grid">
+
+        <!-- TEXTO HERO -->
+        <div class="hero-copy reveal">
+
+          <p class="eyebrow">
+            JOYERÍA CONTEMPORÁNEA
+          </p>
+
+          <h1> q
+            Pequeños detalles.
+            <em>Gran presencia.</em>
+          </h1>
+
+          <p class="hero-text">
+            Diseños pensados para acompañarte todos los días.
+            Piezas elegantes, sutiles y atemporales.
+          </p>
+
+
+          <div class="hero-actions">
+
+            <a href="#coleccion" class="btn btn-dark">
+              Explorar colección
+              <span>→</span>
+            </a>
+
+            <a href="#nosotros" class="text-link">
+              Conoce nuestra historia
+            </a>
+
+          </div>
+
+
+          <!-- MÉTRICAS -->
+          <div class="hero-meta">
+
+            <div>
+              <strong>925</strong>
+              <span>Plata seleccionada</span>
+            </div>
+
+            <div>
+              <strong>100%</strong>
+              <span>Compra online</span>
+            </div>
+
+            <div>
+              <strong>CO</strong>
+              <span>Hecho para Colombia</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ARTE HERO -->
+        <div class="hero-art reveal delay-1">
+
+          <div class="arch"></div>
+
+          <div class="floating-card card-back"></div>
+
+          <div class="floating-card card-front">
+
+            <span class="mini-label">
+              NEXO / 925
+            </span>
+
+            <div class="ring-art">
+              <i></i>
+            </div>
+
+            <span class="mini-caption">
+              EVERYDAY OBJECTS<br>
+              WITH MEANING
+            </span>
+
+          </div>
+
+
+          <span class="sparkle s1">✦</span>
+          <span class="sparkle s2">✧</span>
+          <span class="sparkle s3">✦</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         BARRA DE CONFIANZA
+         ========================================================= -->
+    <section class="trust-strip">
+
+      <div class="container trust-grid">
+
+        <div>
+          <span>✦</span>
+          <strong>Plata 925</strong>
+          <small>Material seleccionado</small>
+        </div>
+
+        <div>
+          <span>◌</span>
+          <strong>Envíos nacionales</strong>
+          <small>Recibe donde estés</small>
+        </div>
+
+        <div>
+          <span>◇</span>
+          <strong>Compra segura</strong>
+          <small>Tus datos protegidos</small>
+        </div>
+
+        <div>
+          <span>↗</span>
+          <strong>Atención personalizada</strong>
+          <small>Estamos para ayudarte</small>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         PRODUCTOS DESTACADOS
+         ========================================================= -->
+    <section class="section" id="destacados">
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div>
+
+            <p class="eyebrow">
+              SELECCIÓN NEXO
+            </p>
+
+            <h2>
+              Piezas <em>destacadas.</em>
+            </h2>
+
+          </div>
+
+          <p>
+            Una selección de nuestras piezas favoritas,
+            elegidas para complementar cualquier momento.
+          </p>
+
+        </div>
+
+
+        <!-- PRODUCTOS CARGADOS DESDE FIRESTORE -->
+        <div
+          class="product-grid"
+          id="featuredGrid"
+        >
+          <!-- JS -->
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         SECCIÓN EDITORIAL
+         ========================================================= -->
+    <section class="section editorial" id="nosotros">
+
+      <div class="container editorial-grid">
+
+        <div class="editorial-art reveal">
+
+          <div class="editorial-frame">
+
+            <div class="editorial-ring"></div>
+
+          </div>
+
+          <span class="vertical-note">
+            NEXO · EST. 2026
+          </span>
+
+        </div>
+
+
+        <div class="editorial-copy reveal delay-1">
+
+          <p class="eyebrow">
+            NUESTRA FILOSOFÍA
+          </p>
+
+          <h2>
+            Menos ruido.
+            <em>Más significado.</em>
+          </h2>
+
+          <p>
+            Creemos que una joya no necesita ser excesiva
+            para destacar. Cada pieza nace con la intención
+            de convertirse en parte de tu historia.
+          </p>
+
+          <a href="#coleccion" class="btn btn-dark">
+            Ver colección
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         COLECCIÓN
+         ========================================================= -->
+    <section class="section" id="coleccion">
+
+      <div class="container">
+
+        <div class="section-head collection-head">
+
+          <div>
+
+            <p class="eyebrow">
+              COLECCIÓN
+            </p>
+
+            <h2>
+              Encuentra tu <em>pieza.</em>
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <!-- FILTROS -->
+        <div class="filter-row" id="filters">
+
+          <button
+            class="filter active"
+            data-filter="Todos"
+          >
+            Todos
+          </button>
+
+          <!-- JS agregará categorías -->
+          
+        </div>
+
+
+        <!-- GRID PRODUCTOS -->
+        <div
+          class="product-grid"
+          id="productGrid"
+        >
+          <!-- JS -->
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         NEWSLETTER
+         ========================================================= -->
+    <section class="section">
+
+      <div class="container">
+
+        <div class="newsletter-box reveal">
+
+          <div>
+
+            <p class="eyebrow">
+              NEXO LETTER
+            </p>
+
+            <h2>
+              Algo especial
+              <em>está por llegar.</em>
+            </h2>
+
+            <p>
+              Recibe novedades, nuevas colecciones y
+              lanzamientos directamente en tu correo.
+            </p>
+
+          </div>
+
+
+          <form
+            class="newsletter-form"
+            id="newsletterForm"
+          >
+
+            <input
+              type="email"
+              id="newsletterEmail"
+              placeholder="Tu correo electrónico"
+              required
+            >
+
+            <button
+              class="btn btn-dark"
+              type="submit"
+            >
+              Suscribirme
+            </button>
+
+            <small id="newsletterMessage"></small>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="footer" id="contacto">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <a href="#" class="brand">
+
+            <span class="brand-mark">N</span>
+
+            <span>
+              <strong>NEXO</strong>
+              <small>JOYERÍA CONTEMPORÁNEA</small>
+            </span>
+
+          </a>
+
+          <p>
+            Joyería contemporánea diseñada para
+            acompañar tu estilo todos los días.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h4>Explorar</h4>
+
+          <a href="#inicio">Inicio</a>
+          <a href="#destacados">Destacados</a>
+          <a href="#coleccion">Colección</a>
+
+        </div>
+
+
+        <div>
+
+          <h4>Ayuda</h4>
+
+          <a href="#">Preguntas frecuentes</a>
+          <a href="#">Envíos</a>
+          <a href="#">Cambios y devoluciones</a>
+
+        </div>
+
+
+        <div>
+
+          <h4>Contacto</h4>
+
+          <a href="mailto:hola@nexostore.com">
+            hola@nexostore.com
+          </a>
+
+          <a href="#">
+            Instagram
+          </a>
+
+          <a href="#">
+            WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 NexoStore
+        </span>
+
+        <span>
+          Hecho con intención.
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================================
+       CARRITO
+       ========================================================= -->
+  <div
+    class="cart-drawer"
+    id="cartDrawer"
+    aria-hidden="true"
+  >
+
+    <div
+      class="cart-overlay"
+      id="cartOverlay"
+    ></div>
+
+
+    <aside class="cart-panel">
+
+      <!-- CABECERA -->
+      <div class="cart-head">
+
+        <h3>
+          Tu carrito
+        </h3>
+
+        <button
+          class="close-btn"
+          id="closeCart"
+          aria-label="Cerrar carrito"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <!-- PRODUCTOS -->
+      <div
+        class="cart-items"
+        id="cartItems"
+      >
+        <!-- JS -->
+      </div>
+
+
+      <!-- RESUMEN -->
+      <div class="cart-summary">
+
+        <div>
+
+          <span>
+            Total
+          </span>
+
+          <strong id="cartTotal">
+            $0
+          </strong>
+
+        </div>
+
+        <small>
+          Los costos de envío pueden variar según la ciudad.
+        </small>
+
+        <button
+          class="btn btn-dark checkout"
+          id="checkoutBtn"
+        >
+          Finalizar pedido
+          <span>→</span>
+        </button>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+
+  <!-- =========================================================
+       MODAL CHECKOUT
+       ========================================================= -->
+  <div
+    class="modal"
+    id="checkoutModal"
+    aria-hidden="true"
+  >
+
+    <div class="modal-overlay" id="checkoutOverlay"></div>
+
+    <div class="modal-card">
+
+      <div class="modal-head">
+
+        <div>
+
+          <p class="eyebrow">
+            FINALIZAR PEDIDO
+          </p>
+
+          <h3>
+            Tus datos
+          </h3>
+
+        </div>
+
+        <button
+          class="close-btn"
+          id="closeCheckout"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <form id="checkoutForm">
+
+        <label>
+          Nombre completo
+          <input
+            type="text"
+            id="customerName"
+            required
+          >
+        </label>
+
+
+        <label>
+          Teléfono
+          <input
+            type="tel"
+            id="customerPhone"
+            required
+          >
+        </label>
+
+
+        <label>
+          Ciudad
+          <input
+            type="text"
+            id="customerCity"
+            required
+          >
+        </label>
+
+
+        <label>
+          Dirección
+          <input
+            type="text"
+            id="customerAddress"
+            required
+          >
+        </label>
+
+
+        <label>
+          Notas del pedido
+          <textarea
+            id="customerNotes"
+            rows="3"
+            placeholder="Información adicional..."
+          ></textarea>
+        </label>
+
+
+        <button
+          type="submit"
+          class="btn btn-dark checkout"
+        >
+          Confirmar pedido
+          <span>→</span>
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       TOAST
+       ========================================================= -->
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+  ></div>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
